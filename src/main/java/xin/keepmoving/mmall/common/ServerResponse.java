@@ -82,4 +82,12 @@ public class ServerResponse<T> implements Serializable {
         return new ServerResponse<>(errorCode, errorMessage);
     }
 
+    public static <T> ServerResponse<T> createByErrorCodeMessage(int errorCode, String msg) {
+        return new ServerResponse(errorCode, msg);
+    }
+
+    public static <T> ServerResponse<T> createErrorWithIllegalArgument() {
+        return new ServerResponse(ResponseCode.ILLEGAL_ARGUMENT.getCode(), "参数错误");
+    }
+
 }

@@ -16,3 +16,6 @@ target/
 
 #temp
 *.log
+
+# config
+datasource.properties

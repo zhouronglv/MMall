@@ -182,4 +182,14 @@
             and answer = #{answer}
         </where>
     </select>
+    <select id="checkPassword" parameterType="map" resultType="int">
+        select count(1) from mmall_user
+        where password = #{oldPassword}
+        and id = #{id}
+    </select>
+    <select id="checkEmailByUserId" parameterType="map" resultType="int">
+        select count(1) from mmall_user
+        where  email = #{email}
+        and id != #{id}
+    </select>
 </mapper>
